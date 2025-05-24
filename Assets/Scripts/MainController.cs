@@ -4,7 +4,7 @@ using UnityEngine;
 public class MainController : MonoBehaviour
 {
     public static MainController Instance;
-    public Dictionary<int, PlayableCharacter> partyMembers = new Dictionary<int, PlayableCharacter>();
+    public List<PlayableCharacter> partyMembers = new List<PlayableCharacter>();
     public List<Character> enemies = new List<Character>();
 
     private void Awake()

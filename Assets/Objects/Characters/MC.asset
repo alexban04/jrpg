@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62240e44f000d7540a407260524a85b0, type: 3}
-  m_Name: New Playable Character
+  m_Name: MC
   m_EditorClassIdentifier: 
-  characterName: 
-  portrait: {fileID: 0}
+  characterName: MC
+  portrait: {fileID: 3204480812468917802, guid: 3a3cc10fd8bda9b498faa8a8ff09f278, type: 3}
   LVL: 1
   EXP: 0
   nextLVLEXP: 100
