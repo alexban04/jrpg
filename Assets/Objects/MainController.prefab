@@ -49,4 +49,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 30d27a097739f144a8cc84fa89866edb, type: 2}
   - {fileID: 11400000, guid: 30d27a097739f144a8cc84fa89866edb, type: 2}
   - {fileID: 11400000, guid: 30d27a097739f144a8cc84fa89866edb, type: 2}
-  enemies: []
+  enemies:
+  - {fileID: 11400000, guid: 0eacd5f2c0fdaad4189a6e875a03c7c1, type: 2}
+  CurrentPartyMembersId: 00000000010000000200000003000000
+  CurrentEnemiesId: 000000000000000000000000000000000000000000000000
