@@ -44,6 +44,20 @@ public class BattleController : MonoBehaviour
     Button buttonEnemyTarget5;
     [SerializeField] GameObject enemyTarget6;
     Button buttonEnemyTarget6;
+    //attack buttons
+    [SerializeField] GameObject attackItemText1;
+    Button buttonAttackItem1;
+    [SerializeField] GameObject attackItemText2;
+    Button buttonAttackItem2;
+    [SerializeField] GameObject attackItemText3;
+    Button buttonAttackItem3;
+    [SerializeField] GameObject attackItemText4;
+    Button buttonAttackItem4;
+    [SerializeField] GameObject attackItemText5;
+    Button buttonAttackItem5;
+    [SerializeField] GameObject attackItemText6;
+    Button buttonAttackItem6;
+
 
     [SerializeField] GameObject BackSprite;
     Button backButton;
@@ -90,6 +104,19 @@ public class BattleController : MonoBehaviour
         buttonEnemyTarget6 = enemyTarget6.GetComponent<Button>();
         buttonEnemyTarget6.onClick.AddListener(OnAttackButtonPressed);
 
+        buttonAttackItem1 = attackItemText1.GetComponent<Button>();
+        buttonAttackItem1.onClick.AddListener(OnAttackButtonPressed);
+        buttonAttackItem2 = attackItemText2.GetComponent<Button>();
+        buttonAttackItem2.onClick.AddListener(OnAttackButtonPressed);
+        buttonAttackItem3 = attackItemText3.GetComponent<Button>();
+        buttonAttackItem3.onClick.AddListener(OnAttackButtonPressed);
+        buttonAttackItem4 = attackItemText4.GetComponent<Button>();
+        buttonAttackItem4.onClick.AddListener(OnAttackButtonPressed);
+        buttonAttackItem5 = attackItemText5.GetComponent<Button>();
+        buttonAttackItem5.onClick.AddListener(OnAttackButtonPressed);
+        buttonAttackItem6 = attackItemText6.GetComponent<Button>();
+        buttonAttackItem6.onClick.AddListener(OnAttackButtonPressed);
+
         mainController = MainController.GetComponent<MainController>();
 
         foreach (int enemyId in mainController.CurrentEnemiesId)
@@ -110,6 +137,51 @@ public class BattleController : MonoBehaviour
         enemyTarget4.GetComponent<Text>().text = currentEnemies[0].characterName;
         enemyTarget5.GetComponent<Text>().text = currentEnemies[0].characterName;
         enemyTarget6.GetComponent<Text>().text = currentEnemies[0].characterName;
+    }
+    void targetChosen(int target)
+    {
+        DisableAll();
+        AttackPanel.SetActive(true);
+    }
+    void OnFriendlyTarget1Pressed()
+    {
+        targetChosen(1);
+    }
+    void OnFriendlyTarget2Pressed()
+    {
+        targetChosen(2);
+    }
+    void OnFriendlyTarget3Pressed()
+    {
+        targetChosen(3);
+    }
+    void OnFriendlyTarget4Pressed()
+    {
+        targetChosen(4);
+    }
+    void OnEnemyTarget1Pressed()
+    {
+        targetChosen(5);
+    }
+    void OnEnemyTarget2Pressed()
+    {
+        targetChosen(6);
+    }
+    void OnEnemyTarget3Pressed()
+    {
+        targetChosen(7);
+    }
+    void OnEnemyTarget4Pressed()
+    {
+        targetChosen(8);
+    }
+    void OnEnemyTarget5Pressed()
+    {
+        targetChosen(9);
+    }
+    void OnEnemyTarget6Pressed()
+    {
+        targetChosen(10);
     }
     void OnAttackButtonPressed()
     {

@@ -29,7 +29,9 @@ MonoBehaviour:
   growthATK: 2
   growthDEF: 1
   growthSPD: 1
-  inventory: []
+  inventory:
+  - {fileID: 11400000, guid: d80c14f2ce8a89f4ea170dee4c7b5620, type: 2}
   avaiableColors:
   - Red
   - Green
+  - Yellow

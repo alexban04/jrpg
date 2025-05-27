@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 11}
   - {fileID: 15}
   m_Selected: 2
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,8 +248,8 @@ MonoBehaviour:
     y: 0
     width: 1252
     height: 664
-  m_MinSize: {x: 202, y: 226}
-  m_MaxSize: {x: 4002, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 19}
@@ -403,7 +403,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 47338
+  m_LastSelectedObjectID: -5500
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -515,7 +515,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Objects/Characters
+    - Assets/Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -525,16 +525,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Objects/Characters
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Jrpg Project\Jrpg Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 44b60000
-    m_LastClickedID: 46660
-    m_ExpandedIDs: 0000000098b100009ab100009cb1000080b3000000ca9a3bffffff7f
+    m_SelectedIDs: 8eb30000
+    m_LastClickedID: 45966
+    m_ExpandedIDs: 00000000a2b10000a4b10000a6b100008ab3000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -563,7 +563,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000098b100009ab100009cb10000
+    m_ExpandedIDs: 00000000a2b10000a4b10000a6b10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -709,9 +709,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 08b9ffff
-      m_LastClickedID: -18168
-      m_ExpandedIDs: 0ab9ffff5edcffff32ddffff9af3ffff60f4fffff6f6ffff0cfbfffff4ffffff0cb400004ab4000074b40000f0b800002eb9000058b90000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 14ecffff0cfbffff0eb500002cb5000052b50000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1164,7 +1164,7 @@ MonoBehaviour:
       sizeOverridden: 0
     - dockPosition: 1
       containerId: overlay-container--right
-      displayed: 1
+      displayed: 0
       id: Scene View/Tilemap Focus
       index: 2
       contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
@@ -1301,9 +1301,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 798.4578, y: 88.503586, z: -8.713739}
+    m_Target: {x: 555.81805, y: 196.72165, z: -7.525104}
     speed: 2
-    m_Value: {x: 798.4578, y: 88.503586, z: -8.713739}
+    m_Value: {x: 555.81805, y: 196.72165, z: -7.525104}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1353,9 +1353,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 474.40082
+    m_Target: 355.5361
     speed: 2
-    m_Value: 474.40082
+    m_Value: 355.5361
   m_Ortho:
     m_Target: 1
     speed: 2

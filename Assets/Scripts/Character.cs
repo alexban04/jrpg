@@ -22,7 +22,7 @@ public class Character: ScriptableObject
     public int growthATK;
     public int growthDEF;
     public int growthSPD;
-    public List<Item> inventory = new List<Item>();
+    public List<PlayerItem> inventory = new List<PlayerItem>();
     public List<String> avaiableColors = new List<String>();
     public virtual void Initialize()
     {
@@ -45,9 +45,16 @@ public class Character: ScriptableObject
     {
         nextLVLEXP = LVL * 100;
     }
-    public void addItem(Item item)
+    public void addItem(PlayerItem item)
     {
-        inventory.Add(item);
+        foreach (String color in avaiableColors)
+        {
+            if (color == item.color)
+            {
+                inventory.Add(item);
+                break;
+            }
+        }
     }
     public void passiveEffect()
     {
