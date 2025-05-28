@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,6 +59,8 @@ public class BattleController : MonoBehaviour
     [SerializeField] GameObject attackItemText6;
     Button buttonAttackItem6;
 
+    [SerializeField] List<GameObject> Initiative = new List<GameObject>();
+    List<int> TurnOrder = new List<int>();
 
     [SerializeField] GameObject BackSprite;
     Button backButton;
@@ -121,11 +124,11 @@ public class BattleController : MonoBehaviour
 
         foreach (int enemyId in mainController.CurrentEnemiesId)
         {
-            if(enemyId != -1) currentEnemies.Add(MainController.GetComponent<MainController>().enemies[enemyId]);
+            if (enemyId != -1) currentEnemies.Add(MainController.GetComponent<MainController>().enemies[enemyId]);
         }
         foreach (int partyMemeberId in mainController.CurrentPartyMembersId)
         {
-            if(partyMemeberId != -1) currentParty.Add(MainController.GetComponent<MainController>().partyMembers[partyMemeberId]);
+            if (partyMemeberId != -1) currentParty.Add(MainController.GetComponent<MainController>().partyMembers[partyMemeberId]);
         }
         friendlyTarget1.GetComponent<Text>().text = currentParty[0].characterName;
         friendlyTarget2.GetComponent<Text>().text = currentParty[1].characterName;
@@ -137,6 +140,61 @@ public class BattleController : MonoBehaviour
         enemyTarget4.GetComponent<Text>().text = currentEnemies[0].characterName;
         enemyTarget5.GetComponent<Text>().text = currentEnemies[0].characterName;
         enemyTarget6.GetComponent<Text>().text = currentEnemies[0].characterName;
+
+        setInitiative();
+    }
+    void setInitiative()
+    {
+        List<String> list = new List<String>();
+        List<int> speed = new List<int>();
+        foreach (WorkingEnemy obj in currentEnemies)
+        {
+            list.Add(obj.characterName);
+            speed.Add(obj.SPD);
+        }
+        foreach (PlayableCharacter obj in currentParty)
+        {
+            list.Add(obj.characterName);
+            speed.Add(obj.SPD);
+        }
+        int tempint;
+        String tempstring;
+        for (int i = 0; i < list.Count; i++)
+        {
+            for (int j = i + 1; j < list.Count; j++)
+            {
+                if (speed[i] < speed[j])
+                {
+                    tempint = speed[i];
+                    tempstring = list[i];
+                    speed[i] = speed[j];
+                    list[i] = list[j];
+                    speed[j] = tempint;
+                    list[j] = tempstring;
+                }
+            }
+        }
+        int count = 0;
+        foreach (String name in list)
+        {
+            Initiative[count].GetComponent<Text>().text = name;
+            count++;
+        }
+        while (count < 10)
+        {
+            Initiative[count].GetComponent<Text>().text = "";
+        }
+    }
+
+    void nextInitiative()
+    {
+        String text = Initiative[0].GetComponent<Text>().text;
+        int size = Initiative.Count;
+        for (int i = 0; i < size; i++)
+        {
+            Initiative[i].GetComponent<Text>().text = Initiative[i + 1].GetComponent<Text>().text;
+        }
+        Initiative[size].GetComponent<Text>().text = text;
     }
     void targetChosen(int target)
     {
