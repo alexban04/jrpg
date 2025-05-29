@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -87,25 +88,25 @@ public class BattleController : MonoBehaviour
         MainController = GameObject.Find("MainController");
 
         buttonFriendlyTarget1 = friendlyTarget1.GetComponent<Button>();
-        buttonFriendlyTarget1.onClick.AddListener(OnAttackButtonPressed);
+        buttonFriendlyTarget1.onClick.AddListener(OnFriendlyTarget1Pressed);
         buttonFriendlyTarget2 = friendlyTarget2.GetComponent<Button>();
-        buttonFriendlyTarget2.onClick.AddListener(OnAttackButtonPressed);
+        buttonFriendlyTarget2.onClick.AddListener(OnFriendlyTarget2Pressed);
         buttonFriendlyTarget3 = friendlyTarget3.GetComponent<Button>();
-        buttonFriendlyTarget3.onClick.AddListener(OnAttackButtonPressed);
+        buttonFriendlyTarget3.onClick.AddListener(OnFriendlyTarget3Pressed);
         buttonFriendlyTarget4 = friendlyTarget4.GetComponent<Button>();
-        buttonFriendlyTarget4.onClick.AddListener(OnAttackButtonPressed);
+        buttonFriendlyTarget4.onClick.AddListener(OnFriendlyTarget4Pressed);
         buttonEnemyTarget1 = enemyTarget1.GetComponent<Button>();
-        buttonEnemyTarget1.onClick.AddListener(OnAttackButtonPressed);
+        buttonEnemyTarget1.onClick.AddListener(OnEnemyTarget1Pressed);
         buttonEnemyTarget2 = enemyTarget2.GetComponent<Button>();
-        buttonEnemyTarget2.onClick.AddListener(OnAttackButtonPressed);
+        buttonEnemyTarget2.onClick.AddListener(OnEnemyTarget2Pressed);
         buttonEnemyTarget3 = enemyTarget3.GetComponent<Button>();
-        buttonEnemyTarget3.onClick.AddListener(OnAttackButtonPressed);
+        buttonEnemyTarget3.onClick.AddListener(OnEnemyTarget3Pressed);
         buttonEnemyTarget4 = enemyTarget4.GetComponent<Button>();
-        buttonEnemyTarget4.onClick.AddListener(OnAttackButtonPressed);
+        buttonEnemyTarget4.onClick.AddListener(OnEnemyTarget4Pressed);
         buttonEnemyTarget5 = enemyTarget5.GetComponent<Button>();
-        buttonEnemyTarget5.onClick.AddListener(OnAttackButtonPressed);
+        buttonEnemyTarget5.onClick.AddListener(OnEnemyTarget5Pressed);
         buttonEnemyTarget6 = enemyTarget6.GetComponent<Button>();
-        buttonEnemyTarget6.onClick.AddListener(OnAttackButtonPressed);
+        buttonEnemyTarget6.onClick.AddListener(OnEnemyTarget6Pressed);
 
         buttonAttackItem1 = attackItemText1.GetComponent<Button>();
         buttonAttackItem1.onClick.AddListener(OnAttackButtonPressed);
@@ -179,11 +180,32 @@ public class BattleController : MonoBehaviour
         {
             Initiative[count].GetComponent<Text>().text = name;
             count++;
+            Debug.Log("added to initiative " + name);
         }
         while (count < 10)
         {
+            Debug.Log("removed from initiative " + Initiative[count].GetComponent<Text>().text);
             Initiative[count].GetComponent<Text>().text = "";
+            count++;
         }
+    }
+
+    PlayableCharacter PlayableFirstInitiative()
+    {
+        foreach (PlayableCharacter character in currentParty)
+        {
+            if (character.characterName.Equals(Initiative[0].GetComponent<Text>().text)) return character;
+            Debug.Log(character.characterName + " != " + Initiative[0].GetComponent<Text>().name);
+        }
+        return null;
+    }
+        WorkingEnemy EnemyFirstInitiative()
+    {
+        foreach (WorkingEnemy enemy in currentEnemies)
+        {
+            if (enemy.characterName.Equals(Initiative[0].GetComponent<Text>().text)) return enemy;
+        }
+        return null;
     }
 
     void nextInitiative()
@@ -200,6 +222,15 @@ public class BattleController : MonoBehaviour
     {
         DisableAll();
         AttackPanel.SetActive(true);
+        PlayableCharacter character = PlayableFirstInitiative();
+        if (character == null) return;
+        else Debug.Log("Found");
+        if(character.inventory[5])attackItemText6.GetComponent<Text>().text = character.inventory[5].name;
+        if(character.inventory[4])attackItemText5.GetComponent<Text>().text = character.inventory[4].name;
+        if(character.inventory[3])attackItemText4.GetComponent<Text>().text = character.inventory[3].name;
+        if(character.inventory[2])attackItemText3.GetComponent<Text>().text = character.inventory[2].name;
+        if(character.inventory[1])attackItemText2.GetComponent<Text>().text = character.inventory[1].name;
+        if(character.inventory[0])attackItemText1.GetComponent<Text>().text = character.inventory[0].name;
     }
     void OnFriendlyTarget1Pressed()
     {
