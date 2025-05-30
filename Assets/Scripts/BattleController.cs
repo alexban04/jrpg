@@ -60,9 +60,15 @@ public class BattleController : MonoBehaviour
     [SerializeField] GameObject attackItemText6;
     Button buttonAttackItem6;
 
+    //Consumable Items
+    [SerializeField] List<GameObject> Consumables = new List<GameObject>();
+    [SerializeField] List<GameObject> ConsumablesPageControllers = new List<GameObject>();
+    List<Button> ConsumablePageButtons = new List<Button>();
+    List<Button> ConsumableButtons = new List<Button>();
+    //Initiative
     [SerializeField] List<GameObject> Initiative = new List<GameObject>();
     List<int> TurnOrder = new List<int>();
-
+    //Other Fields
     [SerializeField] GameObject BackSprite;
     Button backButton;
     GameObject MainController;
@@ -71,6 +77,7 @@ public class BattleController : MonoBehaviour
 
     List<WorkingEnemy> currentEnemies = new List<WorkingEnemy>();
     List<PlayableCharacter> currentParty = new List<PlayableCharacter>();
+    int currentConsumablePage;
 
     void Awake()
     {
@@ -142,8 +149,29 @@ public class BattleController : MonoBehaviour
         enemyTarget5.GetComponent<Text>().text = currentEnemies[0].characterName;
         enemyTarget6.GetComponent<Text>().text = currentEnemies[0].characterName;
 
+        foreach (GameObject obj in Consumables)
+        {
+            ConsumableButtons.Add(obj.GetComponent<Button>());
+        }
+        ConsumableButtons[0].onClick.AddListener(OnConsumable1);
+        ConsumableButtons[1].onClick.AddListener(OnConsumable2);
+        ConsumableButtons[2].onClick.AddListener(OnConsumable3);
+        ConsumableButtons[3].onClick.AddListener(OnConsumable4);
+        ConsumableButtons[4].onClick.AddListener(OnConsumable5);
+        ConsumableButtons[5].onClick.AddListener(OnConsumable6);
+        ConsumableButtons[6].onClick.AddListener(OnConsumable7);
+        ConsumableButtons[7].onClick.AddListener(OnConsumable8);
+
+        foreach (GameObject controller in ConsumablesPageControllers)
+        {
+            ConsumablePageButtons.Add(controller.GetComponent<Button>());
+        }
+        ConsumablePageButtons[0].onClick.AddListener(OnPreviousConsumablePage);
+        ConsumablePageButtons[1].onClick.AddListener(OnNextConsumablePage);
+        
         setInitiative();
     }
+
     void setInitiative()
     {
         List<String> list = new List<String>();
@@ -224,7 +252,6 @@ public class BattleController : MonoBehaviour
         AttackPanel.SetActive(true);
         PlayableCharacter character = PlayableFirstInitiative();
         if (character == null) return;
-        else Debug.Log("Found");
         if(character.inventory[5])attackItemText6.GetComponent<Text>().text = character.inventory[5].name;
         if(character.inventory[4])attackItemText5.GetComponent<Text>().text = character.inventory[4].name;
         if(character.inventory[3])attackItemText4.GetComponent<Text>().text = character.inventory[3].name;
@@ -272,6 +299,52 @@ public class BattleController : MonoBehaviour
     {
         targetChosen(10);
     }
+    void OnConsumable1()
+    {
+
+    }
+    void OnConsumable2()
+    {
+        
+    }
+    void OnConsumable3()
+    {
+        
+    }
+    void OnConsumable4()
+    {
+        
+    }
+    void OnConsumable5()
+    {
+        
+    }
+    void OnConsumable6()
+    {
+        
+    }
+    void OnConsumable7()
+    {
+        
+    }
+    void OnConsumable8()
+    {
+        
+    }
+    void OnPreviousConsumablePage()
+    {
+        currentConsumablePage -= 1;
+        if (currentConsumablePage < 8) ConsumablesPageControllers[0].SetActive(false);
+        if (PlayableFirstInitiative().consumables.Count > currentConsumablePage * 8 + 8) ConsumablesPageControllers[1].SetActive(true);
+        ItemPanelRefresh();
+    }
+    void OnNextConsumablePage()
+    {
+        ConsumablesPageControllers[0].SetActive(true);
+        currentConsumablePage += 1;
+        if (PlayableFirstInitiative().consumables.Count < currentConsumablePage * 8 + 8) ConsumablesPageControllers[1].SetActive(false);
+        ItemPanelRefresh();
+    }
     void OnAttackButtonPressed()
     {
         DisableAll();
@@ -280,7 +353,29 @@ public class BattleController : MonoBehaviour
     void OnItemButtonPressed()
     {
         DisableAll();
+        currentConsumablePage = 0;
+        if (PlayableFirstInitiative().consumables.Count < currentConsumablePage * 8 + 8) ConsumablesPageControllers[1].SetActive(false);
+        ConsumablesPageControllers[0].SetActive(false);
         ItemPanel.SetActive(true);
+        ItemPanelRefresh();
+    }
+    void ItemPanelRefresh()
+    {
+        PlayableCharacter character = PlayableFirstInitiative();
+        List<ConsumableItem> consumables = new List<ConsumableItem>();
+        foreach (ConsumableItem item in character.consumables)
+        {
+            consumables.Add(item);
+        }
+        for (int i = 0; i < 8; i++)
+        {
+            Consumables[i].GetComponent<Text>().text = "";
+        }
+        for (int i = 0; i < 8; i++)
+        {
+            if (consumables.Count <= i + currentConsumablePage * 8) break;
+            Consumables[i].GetComponent<Text>().text = consumables[currentConsumablePage * 8 + i].name;
+        }
     }
     void OnDefendButtonPressed()
     {

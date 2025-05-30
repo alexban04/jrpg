@@ -23,6 +23,7 @@ public class Character: ScriptableObject
     public int growthDEF;
     public int growthSPD;
     public List<PlayerItem> inventory = new List<PlayerItem>();
+    public List<ConsumableItem> consumables = new List<ConsumableItem>();
     public List<String> avaiableColors = new List<String>();
     public virtual void Initialize()
     {

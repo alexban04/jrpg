@@ -36,6 +36,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: d80c14f2ce8a89f4ea170dee4c7b5620, type: 2}
+  consumables:
+  - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
+  - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
+  - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
+  - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
+  - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
+  - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
+  - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
+  - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
+  - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
+  - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
   avaiableColors:
   - Red
   - Green
