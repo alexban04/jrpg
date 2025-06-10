@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62240e44f000d7540a407260524a85b0, type: 3}
-  m_Name: MC
+  m_Name: Yellow Character
   m_EditorClassIdentifier: 
-  characterName: MC
+  characterName: Yellow Character
   portrait: {fileID: 3204480812468917802, guid: 3a3cc10fd8bda9b498faa8a8ff09f278, type: 3}
   LVL: 1
   EXP: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: d80c14f2ce8a89f4ea170dee4c7b5620, type: 2}
+  - {fileID: 0}
   consumables:
   - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
   - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
@@ -48,6 +48,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
   - {fileID: 11400000, guid: d7e0c4b3189b34d40be016c0da29a201, type: 2}
   avaiableColors:
-  - Red
-  - Green
   - Yellow

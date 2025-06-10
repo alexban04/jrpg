@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9a7bc5ea6ce9f4d9ea48a660974bc3, type: 3}
   m_Name: NoNameMonster
   m_EditorClassIdentifier: 
-  characterName: Enemy?
+  characterName: Monster
   portrait: {fileID: 0}
   LVL: 1
   EXP: 25
@@ -22,5 +22,6 @@ MonoBehaviour:
   MP: 3
   ATK: 1
   DEF: 0
-  SPD: 1
-  attacks: []
+  SPD: 4
+  attacks:
+  - {fileID: 11400000, guid: 7e7cae5e465c08148a950e7ddebc7f72, type: 2}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79482c9e72201934fb2f27bc765f4e70, type: 3}
   m_Name: Claw
   m_EditorClassIdentifier: 
-  name: 
-  color: 
-  effect: 
-  damage: 1
+  name: Claw
+  color: Red
+  effect: Strikes a target
+  damage: 2
   cost: 1

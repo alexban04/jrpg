@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleController : MonoBehaviour
 {
@@ -13,8 +14,6 @@ public class BattleController : MonoBehaviour
     [SerializeField] GameObject AttackPanel;
 
     [SerializeField] GameObject ItemPanel;
-
-    [SerializeField] GameObject OtherPanel;
     //battlepanel buttons
     [SerializeField] GameObject AttackText;
     Button attackButton;
@@ -22,8 +21,8 @@ public class BattleController : MonoBehaviour
     Button itemButton;
     [SerializeField] GameObject DefendText;
     Button defendButton;
-    [SerializeField] GameObject OtherText;
-    Button otherButton;
+    [SerializeField] GameObject EscapeText;
+    Button escapeButton;
 
     //targets buttons
     [SerializeField] GameObject friendlyTarget1;
@@ -84,12 +83,12 @@ public class BattleController : MonoBehaviour
         attackButton = AttackText.GetComponent<Button>();
         itemButton = ItemText.GetComponent<Button>();
         defendButton = DefendText.GetComponent<Button>();
-        otherButton = OtherText.GetComponent<Button>();
+        escapeButton = EscapeText.GetComponent<Button>();
         backButton = BackSprite.GetComponent<Button>();
         attackButton.onClick.AddListener(OnAttackButtonPressed);
         itemButton.onClick.AddListener(OnItemButtonPressed);
         defendButton.onClick.AddListener(OnDefendButtonPressed);
-        otherButton.onClick.AddListener(OnOtherButtonPressed);
+        escapeButton.onClick.AddListener(OnEscapeButtonPressed);
         backButton.onClick.AddListener(OnBackButtonPressed);
 
         MainController = GameObject.Find("MainController");
@@ -381,10 +380,10 @@ public class BattleController : MonoBehaviour
     {
         Debug.Log("Defend!");
     }
-    void OnOtherButtonPressed()
+    void OnEscapeButtonPressed()
     {
-        DisableAll();
-        OtherPanel.SetActive(true);
+        OnBackButtonPressed();
+        SceneManager.LoadScene(0);
     }
     void OnBackButtonPressed()
     {
@@ -398,7 +397,6 @@ public class BattleController : MonoBehaviour
         TargetsPanel.SetActive(false);
         AttackPanel.SetActive(false);
         ItemPanel.SetActive(false);
-        OtherPanel.SetActive(false);
         BackSprite.SetActive(true);
     }
 }

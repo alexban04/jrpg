@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62240e44f000d7540a407260524a85b0, type: 3}
+  m_Name: Red Character
+  m_EditorClassIdentifier: 
+  characterName: Red Character
+  portrait: {fileID: 0}
+  LVL: 1
+  EXP: 0
+  nextLVLEXP: 100
+  maxHP: 13
+  HP: 0
+  maxMP: 7
+  MP: 0
+  ATK: 4
+  DEF: 5
+  SPD: 3
+  growthHP: 5
+  growthMP: 2
+  growthATK: 2
+  growthDEF: 3
+  growthSPD: 1
+  inventory:
+  - {fileID: 11400000, guid: 367cb7a9712c54d45a6ccecae3a9cdfd, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  consumables: []
+  avaiableColors:
+  - Red

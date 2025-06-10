@@ -1541,41 +1541,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470209366}
   m_CullTransparentMesh: 1
---- !u!1 &489163073
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 489163074}
-  m_Layer: 5
-  m_Name: OtherPanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &489163074
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489163073}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1299556307}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1100, y: -30}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &490048202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,11 +1589,10 @@ MonoBehaviour:
   TargetsPanel: {fileID: 1638405047}
   AttackPanel: {fileID: 942849428}
   ItemPanel: {fileID: 1178159325}
-  OtherPanel: {fileID: 489163073}
   AttackText: {fileID: 440016672}
   ItemText: {fileID: 1595566357}
   DefendText: {fileID: 1070768385}
-  OtherText: {fileID: 1832670029}
+  EscapeText: {fileID: 1832670029}
   friendlyTarget1: {fileID: 1877428827}
   friendlyTarget2: {fileID: 1371863989}
   friendlyTarget3: {fileID: 1340306095}
@@ -3492,7 +3456,6 @@ RectTransform:
   - {fileID: 1638405048}
   - {fileID: 942849429}
   - {fileID: 1178159326}
-  - {fileID: 489163074}
   m_Father: {fileID: 656807076}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -4827,7 +4790,7 @@ GameObject:
   - component: {fileID: 1832670031}
   - component: {fileID: 1832670033}
   m_Layer: 5
-  m_Name: Other
+  m_Name: Escape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4885,7 +4848,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Other
+  m_Text: Escape
 --- !u!222 &1832670032
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62240e44f000d7540a407260524a85b0, type: 3}
+  m_Name: Green Character
+  m_EditorClassIdentifier: 
+  characterName: Green Character
+  portrait: {fileID: 0}
+  LVL: 1
+  EXP: 0
+  nextLVLEXP: 100
+  maxHP: 11
+  HP: 0
+  maxMP: 10
+  MP: 0
+  ATK: 3
+  DEF: 4
+  SPD: 10
+  growthHP: 3
+  growthMP: 3
+  growthATK: 2
+  growthDEF: 2
+  growthSPD: 3
+  inventory:
+  - {fileID: 11400000, guid: 15f3aef56217f8b4fa3fecb514133057, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  consumables: []
+  avaiableColors:
+  - Green
